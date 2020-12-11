@@ -1,0 +1,20 @@
+.travel{
+    display: flex;
+    padding: 50px;
+}
+.container h1{
+    font-size: 60px;
+    font-weight: bolder;
+}
+.container button{
+    font-weight: bold;
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    color: black;
+    background-color: yellow;
+    border: none;
+}
+.TravelPlaceC{
+    display: flex;
+}

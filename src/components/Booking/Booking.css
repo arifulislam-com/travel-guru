@@ -1,0 +1,39 @@
+.booking{
+    width: 100%;
+    display: flex;
+}
+.dreamPlaceArea{
+    width: 50%;
+    margin: 50px;
+}
+.dreamPlaceArea h1{
+    font-weight: bolder;
+}
+.durationArea{
+    padding: 20px;
+    border: black;
+    border-radius: 10px;
+    color: black;
+    background: white;
+    width: 50%;
+    height: 400px;
+    margin: 50px;
+}
+.calendarP{
+    display: flex;
+}
+.calendarInput{
+    display: flex;
+}
+.durationArea h6{
+    margin-left: 25px;
+}
+.durationArea button{
+    font-weight: bold;
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    color: black;
+    background-color: yellow;
+    border: none;
+}

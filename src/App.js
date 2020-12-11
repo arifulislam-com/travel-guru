@@ -1,24 +1,50 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header/Header';
+import Travel from './components/Travel/Travel';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Booking from './components/Booking/Booking';
+import HotelBooking from './components/HotelBooking/HotelBooking';
+import { createContext, useState } from 'react';
+import Login from './components/Login/Login';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+
+export const CategoryContext = createContext();
 
 function App() {
+  //const [signInUser, setSignInUser] = useState("Arif");
+  const [cart, setCart] = useState({
+    cartt:"",
+    isLogin: false,
+    name: "Arif",
+    email: "ariful@",
+  });
   return (
+    <CategoryContext.Provider value={[cart, setCart]}>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+      <Header></Header>
+        <Switch>
+            <Route path="/booking/:id">
+              <Booking></Booking>
+            </Route>
+            <Route path="/hotelBooking">
+              <HotelBooking></HotelBooking>
+            </Route>
+            <Route path="/login">
+              <Login></Login>
+            </Route>
+          <Route path="/">
+            <Travel></Travel>
+          </Route>
+          </Switch>
+      </Router>
     </div>
+    </CategoryContext.Provider>
   );
 }
 
